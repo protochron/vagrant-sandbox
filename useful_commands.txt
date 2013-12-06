@@ -1,0 +1,5 @@
+Shutdown running virtual boxes:
+VBoxManage list runningvms | awk '{print $2;}' | xargs -I vmid VBoxManage controlvm vmid poweroff 
+
+Delete all boxes:
+VBoxManage list vms | awk '{print $2;}' | xargs -I vmid VBoxManage unregistervm vmid --delete 
