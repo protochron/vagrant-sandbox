@@ -40,5 +40,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.customize ['modifyvm', :id, '--cpus', '1']
   end
 
+  # Provisioning
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = 'manifests'
+    puppet.manifest_file = 'main.pp'
+  end
 
+  # RVM
+  config.vm.provision :shell, path: 'install_rvm.sh', args: 'stable'
+  config.vm.provision :shell, path: 'install_ruby.sh', args: '2.0.0 pry'
 end
