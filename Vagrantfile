@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Tweak memory/cpu if needed
   config.vm.provider :virtualbox do |v|
     v.customize ['modifyvm', :id, '--memory', '1024']
-    v.customize ['modifyvm', :id, '--cups', '1']
+    v.customize ['modifyvm', :id, '--cpus', '1']
   end
 
 
