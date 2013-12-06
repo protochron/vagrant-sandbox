@@ -4,7 +4,7 @@ exec {'apt-update':
 
 Exec['apt-update'] -> Package <| |>
 
-$essential_packages = ['git', 'build-essential', 'aria2c']
+$essential_packages = ['git', 'build-essential', ]
 
 package {$essential_packages:
     ensure => latest,

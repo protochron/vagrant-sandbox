@@ -41,10 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # Provisioning
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = 'manifests'
-    puppet.manifest_file = 'main.pp'
-  end
+  config.vm.provision :puppet
 
   # RVM
   config.vm.provision :shell, path: 'install_rvm.sh', args: 'stable'
