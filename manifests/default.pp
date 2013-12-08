@@ -4,7 +4,7 @@ exec {'apt-update':
 
 Exec['apt-update'] -> Package <| |>
 
-$essential_packages = ['git', 'build-essential', ]
+$essential_packages = ['git', 'build-essential', 'htop' ]
 
 package {$essential_packages:
     ensure => latest,
